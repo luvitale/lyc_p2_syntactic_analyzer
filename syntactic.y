@@ -21,6 +21,7 @@ int yylex();
 int yyerror(char *);
 %}
 
+%right OP_ASSIGN
 %left OP_SUM OP_SUB
 %left OP_MULT OP_DIV
 
@@ -30,8 +31,11 @@ int yyerror(char *);
 
 %token PARENTHESIS_OPEN PARENTHESIS_CLOSE
 
+%token OP_ASSIGN
+
 %%
-expression: expression OP_SUM term
+expression: ID OP_ASSIGN expression
+          | expression OP_SUM term
           | expression OP_SUB term
           | expression OP_MULT term
           | expression OP_DIV term

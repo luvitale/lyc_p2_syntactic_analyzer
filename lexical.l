@@ -30,6 +30,8 @@ id {letter}(_?({letter}|{digit}))*
 parenthesis_open "("
 parenthesis_close ")"
 
+op_assign ":="
+
 %%
 {op_sum} {
   printf("OP_SUM/%s\n", yytext);
@@ -65,6 +67,11 @@ parenthesis_close ")"
 {parenthesis_close} {
   printf("PARENTHESIS_CLOSE/%s\n", yytext);
   return PARENTHESIS_CLOSE;
+}
+
+{op_assign} {
+  printf("OP_ASSIGN/%s\n", yytext);
+  return OP_ASSIGN;
 }
 
 " "
