@@ -31,11 +31,13 @@ int yyerror(char *);
 %token OP_DIV
 
 %%
-expression: ID OP_SUM ID
-          | ID OP_SUB ID
-          | ID OP_MULT ID
-          | ID OP_DIV ID
-          | ID;
+expression: expression OP_SUM term
+          | expression OP_SUB term
+          | expression OP_MULT term
+          | expression OP_DIV term
+          | term;
+
+term: ID | INT_CONSTANT;
 %%
 
 int main(int argc,char *argv[]) {

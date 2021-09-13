@@ -18,9 +18,7 @@ b) Hacer un árbol de parsing para el siguiente programa:
 actual:= (contador/342) + (contador*contador);
 ```
 
-5. En algunos lenguajes de programación se permite la asignación múltiple, en la que varias variables
-pueden recibir el mismo valor. Los que siguen son algunos ejemplos de sentencias en los que se hace
-uso de esta forma de escritura:
+5. En algunos lenguajes de programación se permite la asignación múltiple, en la que varias variables pueden recibir el mismo valor. Los que siguen son algunos ejemplos de sentencias en los que se hace uso de esta forma de escritura:
 
 ```
 a:=inc:=minimo:=expresion;
