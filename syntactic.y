@@ -31,11 +31,13 @@ int yyerror(char *);
 %token OP_DIV
 
 %%
-expression: expression OP_SUM term
-          | expression OP_SUB term
-          | expression OP_MULT term
-          | expression OP_DIV term
-          | term;
+expression: expression OP_SUM factor
+          | expression OP_SUB factor
+          | factor;
+
+factor: factor OP_MULT term
+      | factor OP_DIV term
+      | term;
 
 term: ID | INT_CONSTANT;
 %%
