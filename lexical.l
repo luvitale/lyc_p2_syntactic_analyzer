@@ -34,6 +34,9 @@ op_assign ":="
 
 semicolon ";"
 
+start_reserved_word (INICIO|inicio|Inicio)
+end_reserved_word (FIN|fin|Fin)
+
 %%
 {op_sum} {
   printf("OP_SUM/%s\n", yytext);
@@ -57,6 +60,16 @@ semicolon ";"
   yylval = num;
   return INT_CONSTANT;
 }
+
+{start_reserved_word} {
+  printf("START_RESERVED_WORD/%s\n", yytext);
+  return START_RESERVED_WORD;
+}
+{end_reserved_word} {
+  printf("END_RESERVED_WORD/%s\n", yytext);
+  return END_RESERVED_WORD;
+}
+
 {id} {
   printf("ID/%s\n", yytext);
   return ID;

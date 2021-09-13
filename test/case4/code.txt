@@ -1,1 +1,3 @@
+INICIO
 y := (a + b) * c + d;
+FIN

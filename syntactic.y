@@ -35,9 +35,14 @@ int yyerror(char *);
 
 %token SEMICOLON
 
+%token START_RESERVED_WORD END_RESERVED_WORD
+
 %%
-program: program expression SEMICOLON
-        | expression SEMICOLON;
+program: START_RESERVED_WORD code END_RESERVED_WORD;
+
+code: code line | line;
+
+line: expression SEMICOLON;
 
 expression: ID OP_ASSIGN expression
           | expression OP_SUM term

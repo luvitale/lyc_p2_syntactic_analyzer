@@ -1,0 +1,4 @@
+INICIO
+z := y := x:= 42;
+rbtc := btc := money;
+FIN

@@ -1,2 +1,4 @@
+INICIO
 a:=inc:=minimo:=expresion;
 total:=precio:=expresion;
+FIN
