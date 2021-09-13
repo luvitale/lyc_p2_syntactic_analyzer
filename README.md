@@ -22,7 +22,7 @@ actual:= (contador/342) + (contador*contador);
 
 ```
 a:=inc:=minimo:=expresion;
-total:=precio:=expresión;
+total:=precio:=expresion;
 ```
 
 a) Escriba en BNF la sintaxis de este tipo de asignaciones con las siguientes condiciones: la sentencia debe terminar con “;” y el valor de la derecha debe ser una expresión como la desarrollada en el ejercicio 3

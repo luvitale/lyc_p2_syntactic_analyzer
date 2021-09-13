@@ -32,6 +32,8 @@ parenthesis_close ")"
 
 op_assign ":="
 
+semicolon ";"
+
 %%
 {op_sum} {
   printf("OP_SUM/%s\n", yytext);
@@ -72,6 +74,11 @@ op_assign ":="
 {op_assign} {
   printf("OP_ASSIGN/%s\n", yytext);
   return OP_ASSIGN;
+}
+
+{semicolon} {
+  printf("SEMICOLON/%s\n", yytext);
+  return SEMICOLON;
 }
 
 " "

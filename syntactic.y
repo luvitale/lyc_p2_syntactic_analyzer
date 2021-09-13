@@ -33,7 +33,12 @@ int yyerror(char *);
 
 %token OP_ASSIGN
 
+%token SEMICOLON
+
 %%
+program: program expression SEMICOLON
+        | expression SEMICOLON;
+
 expression: ID OP_ASSIGN expression
           | expression OP_SUM term
           | expression OP_SUB term
