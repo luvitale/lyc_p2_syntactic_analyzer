@@ -1,4 +1,5 @@
 %{
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "y.tab.h"
@@ -23,21 +24,19 @@ int yyerror(char *);
 %left OP_SUM OP_SUB
 %left OP_MULT OP_DIV
 
-%token INT_CONSTANT
-%token ID
-%token OP_SUM
-%token OP_SUB
-%token OP_MULT
-%token OP_DIV
+%token INT_CONSTANT ID
+
+%token OP_SUM OP_SUB OP_MULT OP_DIV
+
+%token PARENTHESIS_OPEN PARENTHESIS_CLOSE
 
 %%
-expression: expression OP_SUM factor
-          | expression OP_SUB factor
-          | factor;
-
-factor: factor OP_MULT term
-      | factor OP_DIV term
-      | term;
+expression: expression OP_SUM term
+          | expression OP_SUB term
+          | expression OP_MULT term
+          | expression OP_DIV term
+          | PARENTHESIS_OPEN expression PARENTHESIS_CLOSE
+          | term;
 
 term: ID | INT_CONSTANT;
 %%

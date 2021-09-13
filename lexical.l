@@ -27,6 +27,9 @@ op_mult "*"
 op_div "/"
 id {letter}(_?({letter}|{digit}))*
 
+parenthesis_open "("
+parenthesis_close ")"
+
 %%
 {op_sum} {
   printf("OP_SUM/%s\n", yytext);
@@ -53,6 +56,15 @@ id {letter}(_?({letter}|{digit}))*
 {id} {
   printf("ID/%s\n", yytext);
   return ID;
+}
+
+{parenthesis_open} {
+  printf("PARENTHESIS_OPEN/%s\n", yytext);
+  return PARENTHESIS_OPEN;
+}
+{parenthesis_close} {
+  printf("PARENTHESIS_CLOSE/%s\n", yytext);
+  return PARENTHESIS_CLOSE;
 }
 
 " "
