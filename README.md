@@ -40,8 +40,8 @@ actual:=promedio:=contador:= promedio/342 + (contador*contador);
 
 ```
 INICIO
-contador:= 0;
-actual:=contador:= 999;
-contador: contador + 1/(actual *34);
+contador:=0;
+actual:=contador:=999;
+contador := contador + 1/(actual * 34);
 FIN
 ```

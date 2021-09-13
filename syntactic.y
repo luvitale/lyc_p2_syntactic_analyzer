@@ -45,10 +45,10 @@ code: code line | line;
 line: expression SEMICOLON;
 
 expression: ID OP_ASSIGN expression
-          | expression OP_SUM term
-          | expression OP_SUB term
-          | expression OP_MULT term
-          | expression OP_DIV term
+          | expression OP_SUM expression
+          | expression OP_SUB expression
+          | expression OP_MULT expression
+          | expression OP_DIV expression
           | PARENTHESIS_OPEN expression PARENTHESIS_CLOSE
           | term;
 
